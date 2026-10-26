@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz & Fluxograma Interativo</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo"><i class="fa-solid fa-heart-pulse"></i><span>LoveMap Quiz</span></div>
+            <div class="progress-indicator">Pergunta <span id="current-q">1</span> de 10</div>
+        </header>
+
+        <!-- Main Content Layout -->
+        <main class="app-content">
+            <!-- Left Panel: Quiz Card -->
+            <section class="quiz-panel">
+                <div id="quiz-card" class="card">
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar" style="width: 10%;"></div>
+                    </div>
+                    <h2 id="question-title">Carregando pergunta...</h2>
+                    <div id="options-container" class="options-container">
+                        <!-- Opções injetadas via JS -->
+                    </div>
+                </div>
+
+                <div id="result-card" class="card hidden">
+                    <div class="result-icon"><i class="fa-solid fa-award"></i></div>
+                    <h2>Perfil Concluído!</h2>
+                    <p id="result-description">O seu fluxograma final está completo ao lado. Veja os traços e preferências identificadas.</p>
+                    <button id="restart-btn" class="btn-primary"><i class="fa-solid fa-rotate-right">Refazer Quiz</i></button>
+                </div>
+            </section>
+
+            <!-- Right Panel: Dynamic Flowchart Container -->
+            <section class="flowchart-panel">
+                <div class="flowchart-header">
+                    <h3><i class="fa-solid fa-sitemap"></i> Fluxograma de Decisão Dinâmico</h3>
+                    <span class="badge">Construção em tempo real</span>
+                </div>
+                <div id="flowchart-canvas" class="flowchart-canvas">
+                    <div class="flow-node start-node">
+                        <i class="fa-solid fa-compass"></i>
+                        <div>
+                            <strong>Início</strong>
+                            <p>Análise de Preferências</p>
+                        </div>
+                    </div>
+                    <!-- Nós do fluxograma entram aqui -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
